@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   # Lists
   resources :lists, only: [:index, :show, :new, :create] do
     # Bookmarks
-    resources :bookmarks, only: [:new, :create, :destroy]
+    resources :bookmarks, only: [:new, :create]
   end
+  resources :bookmarks, only: :destroy
 
-  root to: 'movies#index'
+  root to: 'lists#index'
 end

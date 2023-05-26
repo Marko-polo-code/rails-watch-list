@@ -22,7 +22,7 @@ class BookmarksController < ApplicationController
   # DELETE /lists/:list_id/bookmarks/:id
   def destroy
     @bookmark.destroy
-    redirect_to @list, notice: 'Bookmark was successfully destroyed.'
+    redirect_to list_path(@list), notice: 'Bookmark was successfully destroyed.'
   end
 
   private
@@ -32,7 +32,7 @@ class BookmarksController < ApplicationController
   end
 
   def set_bookmark
-    @bookmark = @list.bookmarks.find(params[:id])
+    @bookmark = Bookmark.find(params[:id])
   end
 
   def bookmark_params

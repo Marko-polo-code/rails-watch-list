@@ -1,7 +1,35 @@
-<h1>Lists</h1>
+<div class="navbar-lewagon">
+</div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list %></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2831&q=80');">
+  <div class="container">
+    <h1>AMC brings <strong>the best movies</strong> to <strong>you</strong>!</h1>
+    <p>Your very own home theater</p>
+  </div>
+</div>
+
+<div>
+  <h1>My Lists</h1>
+  <div class="card-container">
+    <% @lists.each do |list| %>
+      <div class="card-category">
+        <h2><%= link_to list.name, list %></h2>
+      </div>
+    <% end %>
+    <%= link_to "Create a Movie List", new_list_path, class: "button" %>
+    <%= link_to "My Lists", lists_path, class: "button" %>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
